@@ -1,0 +1,75 @@
+ACHTUNG: Kopierte das for das </head> Element:
+-----------------------------------------------
+
+<!-- START: Präzise Reparatur für den Chat-Extrakt -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@media (max-width: 768px) {
+    /* 1. Höhenbegrenzung aufheben & Textboxen befreien */
+    html, body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    div, main, section, article {
+        height: auto !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        flex-grow: 1 !important;
+    }
+
+    /* 2. System-Icons bändigen – ABER MedienBox ausschließen */
+    svg:not([class*="media"]), 
+    img:not([class*="media"]):not([class*="image"]), 
+    [class*="icon"], .material-icons, i {
+        max-width: 24px !important;   /* Nur kleine UI-Symbole schrumpfen */
+        max-height: 24px !important;
+        width: auto !important;
+        height: auto !important;
+        display: inline-block !important;
+    }
+
+    /* Größere Logos wie das Haupt-Google-Branding stutzen */
+    img[src*="google"], svg[id*="logo"] {
+        max-width: 120px !important;
+    }
+
+    /* 3. NEU: Bilder in der MedienBox mobil groß und original anzeigen */
+    /* Wir sprechen typische Klassennamen für Medien/Anhänge an */
+    div[class*="media"] img, 
+    div[class*="image"] img, 
+    .media-box img, 
+    .gallery img,
+    img[class*="attachment"] {
+        max-width: 100% !important;   /* Nutzt die volle Handybreite aus */
+        max-height: none !important;  /* Verhindert Stauchung */
+        width: 100% !important;       /* Macht es schön groß */
+        height: auto !important;      /* Behält das originale Seitenverhältnis bei */
+        display: block !important;
+        margin: 10px auto !important;
+    }
+
+    /* 4. Textlesbarkeit erzwingen */
+    p, span, li, blockquote, div {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+    }
+
+    /* 5. Breitenbegrenzungen für Desktops neutralisieren */
+    .max-w-3xl, .max-w-2xl, .max-w-xl, *[style*="width:"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+</style>
+<!-- ENDE: Präzise Reparatur für den Chat-Extrakt -->
+
+
+
+
+</head><body 
